@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Page Title</title>
+</head>
+<body>
+  <script>
+    function add7(number) {
+        return result = number + 7;
+    };
+
+    function multiply(num1, num2) {
+        return result = num1 * num2;
+    };
+
+    // function capitalize(text) {
+    //     for (let i = 0; i < text.length; i+2) {
+    //     newText = text[i].toUpperCase() + text[i+1]};
+
+    //     return newText;
+    // };
+    
+    function lastLetter(string) {
+        return string.charAt(string.length-1)
+    };
+
+    function spl(string)  {
+       let newString = string.split(' ')
+                .map(word => word.split('')
+                .map((chr, i) => chr[i%2 ? 'toLowerCase' : 'toUpperCase']()).join(''))
+                .join(' ')
+        return newString;
+        
+    };
+
+
+    </script>
+</body>
+</html>
