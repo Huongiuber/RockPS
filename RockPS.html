@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Function scope example</title>
-  </head>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" type="text/css" href="RockPS.css" />
+</head>
+
 <body>
-    <h3>What is your choice?</h3>
+  <h3>What is your choice?</h3>
 
-    <input type="text" id="myText">
+  <!-- <input type="text" id="myText">
 
-    <button id="btn" onclick="game1()">Submit</button>
-    <p id="score"></p>
-    <p id="result"></p>
-    <p id="finalResult"></p>
+    <button id="btn" onclick="game1()">Submit</button> -->
 
-    <script src="RockPs.js"></script>
+  <div id="mainbox">
+    <button id="btn1" value="rock" onclick="getRock(), game1()">Rock</button>
+    <button id="btn2" value="paper" onclick="getPaper(), game1()">Paper</button>
+    <button id="btn3" value="scissors" onclick="getScissors(), game1()">Scissors</button>
+  </div>
+
+
+
+  <p id="score"></p>
+  <p id="result"></p>
+  <p id="finalResult"></p>
+
+  <script src="RockPs.js"></script>
 </body>
+
 </html>

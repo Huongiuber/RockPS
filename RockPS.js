@@ -1,28 +1,22 @@
 const list1 = ["rock", "paper", "scissors"];
 
 function getComputerChoice() {
-    return list1[Math.floor(Math.random()*list1.length)];
+    return list1[Math.floor(Math.random() * list1.length)];
 };
 
 let playerScore = 0;
 let comScore = 0;
 
-function getPlayerChoice() {
-    console.log("chuan bi lay text tu input, input hiện tại đang có giá trị là", document.getElementById("myText").value);
-    return playerSelection = document.getElementById("myText").value;
-};
-
 function playRound(playerSelection, computerSelection) {
-    console.log("so sanh lua chon nguoi choi sau do cong diem cho ben thang");
     if (playerSelection.toLowerCase() === computerSelection) {
         return ("Same");
-        
+
     } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors" || playerSelection.toLowerCase() === "paper" && computerSelection === "rock" || playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") {
         playerScore = playerScore + 1;
         return (`You win, ${playerSelection.toLowerCase()} beats ${computerSelection}!`);
     } else if (playerSelection.toLowerCase() === "") {
         return ('Type your choice');
-        
+
     } else {
         comScore = comScore + 1;
         return (`You lose, ${computerSelection} beats ${playerSelection.toLowerCase()}!`);
@@ -30,21 +24,16 @@ function playRound(playerSelection, computerSelection) {
 };
 
 
-function game() {
-    let playerSelection = getPlayerChoice();
-    console.log("nguoi choi chon", playerSelection);
+function compareScore() {
     let computerSelection = getComputerChoice();
-    console.log("may chon", computerSelection);
-    document.getElementById("result").innerHTML = playRound(playerSelection, computerSelection);  
-    console.log("in ket qua tren man hinh");
+    document.getElementById("result").innerHTML = playRound(playerSelection, computerSelection);
     document.getElementById("score").innerHTML = (`Your score: ${playerScore}; Computer's score: ${comScore}`);
-    console.log("in diem len man hinh");
-    
+
 };
 
-function play() {
+function printFinalResult() {
     console.log("IN ket qua cuoi");
-    if (playerScore > comScore) 
+    if (playerScore > comScore)
         document.getElementById("finalResult").innerHTML = "YOU WON!";
     else if (playerScore < comScore)
         document.getElementById("finalResult").innerHTML = "YOU LOSE!";
@@ -53,21 +42,15 @@ function play() {
 
 };
 
-function changeValue() {
-    console.log("change giá trị của input thành null");
-    textField = document.getElementById("myText");
-    textField.value = null;
-};
+
 let i = 1;
 
 function game1() {
-    console.log(i);
-    game();
-    changeValue();
+    compareScore();
     i = i + 1;
     if (i % 6 == 0) {
         console.log("heet game");
-        play();
+        printFinalResult();
         i = 1;
         console.log(i);
         comScore = playerScore = 0;
@@ -78,5 +61,14 @@ function game1() {
     }
 };
 
+function getRock() {
+    return playerSelection = document.getElementById("btn1").value
+};
 
+function getPaper() {
+    return playerSelection = document.getElementById("btn2").value
+};
 
+function getScissors() {
+    return playerSelection = document.getElementById("btn3").value
+}
